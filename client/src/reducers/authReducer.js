@@ -2,12 +2,11 @@ import { FETCH_USER } from '../constant'
 
 const initialState = null
 
-const authReducer = (state = initialState, action) => {
-	switch (action.type) {
-		case FETCH_USER:
-			return action.payload || false;
-		default: return state;
-	}
-}
-
-export default authReducer;
+export default (state = initialState, { type, payload }) => {
+  switch (type) {
+    case FETCH_USER:
+      return payload || false;
+    default:
+      return state;
+  }
+};
